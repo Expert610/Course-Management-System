@@ -149,7 +149,7 @@ namespace LoginForm
             else
             {
                 string query = "INSERT INTO course_info (c_category, c_type, c_name, DOB, age,id) VALUES (@Category, @Type, @Name, @DOB, @Age,@id)";
-                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-L56IBDC\\SQLEXPRESS;Initial Catalog=User_Database;Integrated Security=True;Trust Server Certificate=True"))
+                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-\\SQLEXPRESS;Initial Catalog=User_Database;Integrated Security=True;Trust Server Certificate=True"))
                 {
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@Category", cbocategory.SelectedItem.ToString());
@@ -173,7 +173,7 @@ namespace LoginForm
 
         private void btnselect_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("Server=DESKTOP-L56IBDC\\SQLEXPRESS;Initial Catalog=User_Database;Integrated Security=True;Trust Server Certificate=True");
+            SqlConnection conn = new SqlConnection("Server=DESKTOP-\\SQLEXPRESS;Initial Catalog=User_Database;Integrated Security=True;Trust Server Certificate=True");
             string query = "Select *from course_info where id = @userid ";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@userid", Program.userid);
@@ -214,7 +214,7 @@ namespace LoginForm
 
                 // Delete from the database
                 string query = "DELETE FROM course_info WHERE id = @Id";
-                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-L56IBDC\\SQLEXPRESS;Initial Catalog=User_Database;Integrated Security=True;Trust Server Certificate=True"))
+                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-\\SQLEXPRESS;Initial Catalog=User_Database;Integrated Security=True;Trust Server Certificate=True"))
                 {
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@Id", selectedId);
@@ -251,7 +251,7 @@ namespace LoginForm
 
                 // Update the database
                 string query = "UPDATE course_info SET c_category = @Category, c_type = @Type, c_name = @Name, DOB = @DOB, age = @Age WHERE id = @Id";
-                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-L56IBDC\\SQLEXPRESS;Initial Catalog=User_Database;Integrated Security=True;Trust Server Certificate=True"))
+                using (SqlConnection conn = new SqlConnection("Server=DESKTOP-\\SQLEXPRESS;Initial Catalog=User_Database;Integrated Security=True;Trust Server Certificate=True"))
                 {
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@Category", updatedCategory);
