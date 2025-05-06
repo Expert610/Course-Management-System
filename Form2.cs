@@ -142,8 +142,8 @@ namespace LoginForm
             }
             if (isValid)
             {
-              //  string constring = @"Data Source=DESKTOP-L56IBDC\SQLEXPRESS;Initial Catalog=User_Database;Integrated Security=True;Trust Server Certificate=True";
-                SqlConnection con = new SqlConnection("Server=DESKTOP-L56IBDC\\SQLEXPRESS; DataBase=User_Database; Integrated Security=true;Trust Server Certificate=True");
+              //  string constring = @"Data Source=DESKTOP-\SQLEXPRESS;Initial Catalog=User_Database;Integrated Security=True;Trust Server Certificate=True";
+                SqlConnection con = new SqlConnection("Server=DESKTOP-\\SQLEXPRESS; DataBase=User_Database; Integrated Security=true;Trust Server Certificate=True");
                 //insert into Registration_form (name,Email,Password, phone,gender,country,countrycode) values('a','a','aad','ad','male','afda','ada')
                 SqlCommand cmd = new SqlCommand(
                     @"INSERT INTO[dbo].[Registration_form]
